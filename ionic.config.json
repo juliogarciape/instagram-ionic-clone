@@ -1,0 +1,7 @@
+{
+  "name": "photos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
