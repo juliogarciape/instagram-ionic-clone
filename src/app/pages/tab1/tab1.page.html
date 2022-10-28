@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="logo">Instagram</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon class="msg" slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let photo of photos">
+    <ion-card-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-img class="avatar-profile" [src]="photo.user.profile_image.small"></ion-img>
+          <ion-card-subtitle color="dark">{{photo.user.username}}</ion-card-subtitle>
+          <ion-icon class="check-oficial" slot="end" name="checkmark-outline"></ion-icon>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon size="small" slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-img [src]="photo.urls.small"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button>
+            <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon slot="icon-only" name="chatbubble-outline"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon name="navigate-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon slot="icon-only" name="bookmark-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-text color="dark">
+        {{photo.likes}} Me gusta
+      </ion-text>
+      <ion-text >
+        {{photo.description}}
+      </ion-text>
+      <ion-text color="dark">
+        Hace 5 días
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
