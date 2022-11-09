@@ -16,11 +16,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let photo of photos">
+  <ion-card *ngFor="let photo of photos[0]">
     <ion-card-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-img class="avatar-profile" [src]="photo.user.profile_image.small"></ion-img>
+          <div class="avatar-history">
+            <ion-img class="avatar-profile" [src]="photo.user.profile_image.small"></ion-img>
+          </div>
           <ion-card-subtitle color="dark">{{photo.user.username}}</ion-card-subtitle>
           <ion-icon class="check-oficial" slot="end" name="checkmark-outline"></ion-icon>
         </ion-buttons>
@@ -54,7 +56,7 @@
       <ion-text color="dark">
         {{photo.likes}} Me gusta
       </ion-text>
-      <ion-text >
+      <ion-text class="info">
         {{photo.description}}
       </ion-text>
       <ion-text color="dark">

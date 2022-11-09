@@ -16,15 +16,8 @@ export class Tab1Page implements OnInit{
   ngOnInit(){
     this.photoService.getTopHeadLines()
     .subscribe(data => {
-      console.log(data[0])
-      //this.photos.push(...res);
-      this.photos.push(data[0])
-      this.photos.push(data[1])
-      this.photos.push(data[2])
-      this.photos.push(data[3])
-      this.photos.push(data[4])
-      this.photos.push(data[5])
-
+      this.photos.push(...[data]);
+      console.log(this.photos)
     })
   }
 
